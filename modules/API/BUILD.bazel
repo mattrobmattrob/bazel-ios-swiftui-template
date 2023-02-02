@@ -1,0 +1,34 @@
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load("//tools:shared.bzl", "versions")
+
+# Code
+
+swift_library(
+    name = "APILib",
+    srcs = [
+        "API/API.swift",
+    ],
+    module_name = "API",
+    visibility = ["//app:__subpackages__"],
+)
+
+# Tests
+
+swift_library(
+    name = "APITestsLib",
+    testonly = True,
+    srcs = [
+        "TestsLib/APITests.swift",
+    ],
+    module_name = "APITests",
+    deps = [
+        ":APILib",
+    ],
+)
+
+ios_unit_test(
+    name = "APITests",
+    minimum_os_version = versions.minimum_ios_version,
+    deps = [":APITestsLib"],
+)

@@ -1,0 +1,36 @@
+## BUILD
+
+# Disable the worker, which has sandboxing disabled by default, which can hide
+# issues with non-hermetic bugs.
+build --spawn_strategy=sandboxed,local
+build --worker_sandboxing=true
+
+build --incompatible_disallow_empty_glob
+
+build --features=swift.use_global_module_cache
+
+# Enable indexing while building.
+build --features swift.use_global_index_store
+build --features swift.index_while_building
+
+# Since there's no way to set the deployment version for swift_{binary,test},
+# this forces all targets' minimum macOS to Github Actions macOS version.
+build --macos_minimum_os=12.6
+
+## TEST
+
+# `bazel test` tries to build everything also by default, so skip that so the
+# *_library targets in examples/... aren't built (and fail since they are
+# platform specific).
+test --build_tests_only
+
+# Show detailed errors for test failures
+test --test_output=errors --test_summary=detailed
+
+# Use llvm-cov instead of gcov (default).
+coverage --experimental_use_llvm_covmap
+
+## LOCAL CONFIG
+
+# Load a user.bazelrc
+try-import %workspace%/user.bazelrc

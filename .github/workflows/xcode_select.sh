@@ -6,3 +6,8 @@ printenv
 
 sudo xcode-select -p
 sudo xcode-select -s /Applications/Xcode_14.2.app
+
+echo "Generating bazelrc"
+
+# Enable remote cache for all Github Action builds
+echo "build --config=remote_cache" > user.bazelrc

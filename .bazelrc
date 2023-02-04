@@ -1,5 +1,8 @@
 ## BUILD
 
+# https://bazel.build/reference/command-line-reference#flag--incompatible_strict_action_env
+build --incompatible_strict_action_env
+
 # Disable the worker, which has sandboxing disabled by default, which can hide
 # issues with non-hermetic bugs.
 build --spawn_strategy=sandboxed,local
@@ -29,6 +32,18 @@ test --test_output=errors --test_summary=detailed
 
 # Use llvm-cov instead of gcov (default).
 coverage --experimental_use_llvm_covmap
+
+## REMOTE CACHE
+
+build:remote_cache --bes_results_url=https://app.buildbuddy.io/invocation/
+build:remote_cache --bes_backend=grpcs://remote.buildbuddy.io
+build:remote_cache --remote_cache=grpcs://remote.buildbuddy.io
+# https://bazel.build/reference/command-line-reference#flag--remote_download_toplevel
+build:remote_cache --remote_download_toplevel
+# https://bazel.build/reference/command-line-reference#flag--remote_timeout
+build:remote_cache --remote_timeout=3600
+# https://bazel.build/reference/command-line-reference#flag--experimental_remote_cache_compression
+build:remote_cache --experimental_remote_cache_compression
 
 ## LOCAL CONFIG
 

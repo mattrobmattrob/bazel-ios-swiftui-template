@@ -35,6 +35,9 @@ coverage --experimental_use_llvm_covmap
 
 ## REMOTE CACHE
 
+# Do actions locally when it makes sense.
+build --modify_execution_info=^(BitcodeSymbolsCopy|BundleApp|BundleTreeApp|DsymDwarf|DsymLipo|GenerateAppleSymbolsFile|ObjcBinarySymbolStrip|CppLink|ObjcLink|ProcessAndSign|SignBinary|SwiftArchive|SwiftStdlibCopy)$=+no-remote,^(BundleResources|ImportedDynamicFrameworkProcessor)$=+no-remote-exec
+
 build:remote_cache --bes_results_url=https://app.buildbuddy.io/invocation/
 build:remote_cache --bes_backend=grpcs://remote.buildbuddy.io
 build:remote_cache --remote_cache=grpcs://remote.buildbuddy.io

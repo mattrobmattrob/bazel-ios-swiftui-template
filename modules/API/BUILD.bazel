@@ -22,7 +22,7 @@ swift_library(
     name = "APITestsLib",
     testonly = True,
     srcs = [
-        "TestsLib/APITests.swift",
+        "Tests/APITests.swift",
     ],
     module_name = "APITests",
     deps = [

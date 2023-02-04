@@ -1,8 +1,8 @@
-import API
+@testable import Models
 import XCTest
 
-final class APITests: XCTestCase {
+final class ModelsTests: XCTestCase {
     func test_success() {
-        XCTAssertTrue(API.returnTrue())
+        XCTAssertTrue(ModelA().internalBoolFunction())
     }
 }

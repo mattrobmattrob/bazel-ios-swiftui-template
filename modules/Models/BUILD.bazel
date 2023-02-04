@@ -19,7 +19,7 @@ swift_library(
     name = "ModelsTestsLib",
     testonly = True,
     srcs = [
-        "TestsLib/ModelsTests.swift",
+        "Tests/ModelsTests.swift",
     ],
     module_name = "ModelsTests",
     deps = [

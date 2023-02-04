@@ -26,6 +26,10 @@ jobs:
 
           # Run the tests
           bazelisk test --local_test_jobs=1 -- //...
+      - name: Generate Xcode Project
+        run: |
+          # Generate Xcode project
+          bazelisk run -- //:xcodeproj
       - uses: actions/upload-artifact@v2
         if: failure()
         with:

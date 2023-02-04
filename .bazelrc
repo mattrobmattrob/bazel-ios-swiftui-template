@@ -28,7 +28,7 @@ build --macos_minimum_os=12.6
 test --build_tests_only
 
 # Show detailed errors for test failures
-test --test_output=errors --test_summary=detailed
+test --test_output=errors
 
 # Use llvm-cov instead of gcov (default).
 coverage --experimental_use_llvm_covmap

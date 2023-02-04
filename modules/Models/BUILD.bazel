@@ -5,34 +5,31 @@ load("//tools:shared.bzl", "versions")
 # Code
 
 swift_library(
-    name = "APILib",
+    name = "ModelsLib",
     srcs = [
-        "API/API.swift",
+        "Models/Models.swift",
     ],
-    module_name = "API",
+    module_name = "Models",
     visibility = ["//modules:default_library_visibility"],
-    deps = [
-        "//modules/Models:ModelsLib",
-    ],
 )
 
 # Tests
 
 swift_library(
-    name = "APITestsLib",
+    name = "ModelsTestsLib",
     testonly = True,
     srcs = [
-        "Tests/APITests.swift",
+        "Tests/ModelsTests.swift",
     ],
-    module_name = "APITests",
+    module_name = "ModelsTests",
     deps = [
-        ":APILib",
+        ":ModelsLib",
     ],
 )
 
 ios_unit_test(
-    name = "APITests",
+    name = "ModelsTests",
     minimum_os_version = versions.minimum_ios_version,
     visibility = ["//modules:default_test_visibility"],
-    deps = [":APITestsLib"],
+    deps = [":ModelsTestsLib"],
 )

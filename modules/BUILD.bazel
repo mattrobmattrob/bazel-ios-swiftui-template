@@ -1,0 +1,17 @@
+package_group(
+    name = "default_library_visibility",
+    packages = [
+        # The application package.
+        "//app",
+        # All other modules.
+        "//modules/...",
+    ],
+)
+
+package_group(
+    name = "default_test_visibility",
+    packages = [
+        # The root package to be included in the Xcode project.
+        "//",
+    ],
+)

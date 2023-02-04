@@ -38,8 +38,12 @@ coverage --experimental_use_llvm_covmap
 build:remote_cache --bes_results_url=https://app.buildbuddy.io/invocation/
 build:remote_cache --bes_backend=grpcs://remote.buildbuddy.io
 build:remote_cache --remote_cache=grpcs://remote.buildbuddy.io
+# https://bazel.build/reference/command-line-reference#flag--remote_download_toplevel
 build:remote_cache --remote_download_toplevel
+# https://bazel.build/reference/command-line-reference#flag--remote_timeout
 build:remote_cache --remote_timeout=3600
+# https://bazel.build/reference/command-line-reference#flag--experimental_remote_cache_compression
+build:remote_cache --experimental_remote_cache_compression
 
 ## LOCAL CONFIG
 

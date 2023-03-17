@@ -82,8 +82,8 @@ native_binary(
 
 http_archive(
     name = "rules_xcodeproj",
-    sha256 = "2f6e36404696cb8c2ff28ff1788cbb85c1c0fe7709c8e411cc2f6b8bafb50f02",
-    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.3.0/release.tar.gz",
+    sha256 = "ef70a074a74bb5eb7d4a1f17a89d3755d64be7153c3eb41e1d6fdd21844ffcd4",
+    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.3.1/release.tar.gz",
 )
 
 load(

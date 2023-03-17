@@ -6,7 +6,7 @@ package_group(
         # All other modules.
         "//modules/...",
         # Project generation.
-        "@rules_xcodeproj_generated//...",
+        "@rules_xcodeproj//:generated",
     ],
 )
 
@@ -16,6 +16,6 @@ package_group(
         # The root package to be included in the Xcode project.
         "//",
         # Project generation.
-        "@rules_xcodeproj_generated//...",
+        "@rules_xcodeproj//:generated",
     ],
 )

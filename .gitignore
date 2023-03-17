@@ -2,7 +2,6 @@
 
 /bazel-*
 /user.bazelrc
-/.rules_xcodeproj
 
 # macOS
 

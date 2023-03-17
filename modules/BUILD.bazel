@@ -1,21 +1,21 @@
 package_group(
     name = "default_library_visibility",
+    includes = [
+        # Project generation.
+        "@rules_xcodeproj//xcodeproj:generated",
+    ],
     packages = [
         # The application package.
         "//app",
         # All other modules.
         "//modules/...",
-        # Project generation.
-        "//.rules_xcodeproj/...",
     ],
 )
 
 package_group(
     name = "default_test_visibility",
-    packages = [
-        # The root package to be included in the Xcode project.
-        "//",
+    includes = [
         # Project generation.
-        "//.rules_xcodeproj/...",
+        "@rules_xcodeproj//xcodeproj:generated",
     ],
 )

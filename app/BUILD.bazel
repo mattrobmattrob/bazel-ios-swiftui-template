@@ -52,7 +52,10 @@ ios_application(
     # Add localizable assets here.
     # strings = glob(["*.lproj/Localizable.strings"]),
     version = ":Version",
-    visibility = ["//:__subpackages__"],
+    visibility = [
+        "//:__subpackages__",
+        "@rules_xcodeproj//xcodeproj:generated",
+    ],
     deps = [
         ":app.library",
     ],

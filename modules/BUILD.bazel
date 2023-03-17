@@ -2,7 +2,7 @@ package_group(
     name = "default_library_visibility",
     includes = [
         # Project generation.
-        "@rules_xcodeproj//:generated",
+        "@rules_xcodeproj//xcodeproj:generated",
     ],
     packages = [
         # The application package.
@@ -16,6 +16,6 @@ package_group(
     name = "default_test_visibility",
     includes = [
         # Project generation.
-        "@rules_xcodeproj//:generated",
+        "@rules_xcodeproj//xcodeproj:generated",
     ],
 )

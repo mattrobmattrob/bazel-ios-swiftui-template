@@ -5,6 +5,8 @@ package_group(
         "//app",
         # All other modules.
         "//modules/...",
+        # Project generation.
+        "@rules_xcodeproj_generated//...",
     ],
 )
 
@@ -13,5 +15,7 @@ package_group(
     packages = [
         # The root package to be included in the Xcode project.
         "//",
+        # Project generation.
+        "@rules_xcodeproj_generated//...",
     ],
 )

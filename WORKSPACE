@@ -83,7 +83,7 @@ native_binary(
 http_archive(
     name = "rules_xcodeproj",
     sha256 = "3ec2a81def51aac59de49273cf6f8e3f151a95bc4f4b4891750afa750a55973b",
-    url = "https://github.com/buildbuddy-io/rules_xcodeproj/releases/download/1.3.2/release.tar.gz",
+    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.3.2/release.tar.gz",
 )
 
 load(

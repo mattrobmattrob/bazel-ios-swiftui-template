@@ -1,12 +1,28 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-# iOS/macOS
+# rules_xcodeproj
 
 http_archive(
-    name = "build_bazel_rules_apple",
-    sha256 = "3e2c7ae0ddd181c4053b6491dad1d01ae29011bc322ca87eea45957c76d3a0c3",
-    url = "https://github.com/bazelbuild/rules_apple/releases/download/2.1.0/rules_apple.2.1.0.tar.gz",
+    name = "rules_xcodeproj",
+    sha256 = "7967b372bd1777214ce65c87a82ac0630150b7504b443de0315ea52e45758e0c",
+    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.3.3/release.tar.gz",
 )
+
+load(
+    "@rules_xcodeproj//xcodeproj:repositories.bzl",
+    "xcodeproj_rules_dependencies",
+)
+
+xcodeproj_rules_dependencies()
+
+# iOS/macOS
+
+# This is pulled in from `rules_xcodeproj`. Override with this type of declaration.
+# http_archive(
+#     name = "build_bazel_rules_apple",
+#     sha256 = "3e2c7ae0ddd181c4053b6491dad1d01ae29011bc322ca87eea45957c76d3a0c3",
+#     url = "https://github.com/bazelbuild/rules_apple/releases/download/2.1.0/rules_apple.2.1.0.tar.gz",
+# )
 
 load(
     "@build_bazel_rules_apple//apple:repositories.bzl",
@@ -77,18 +93,3 @@ native_binary(
     strip_prefix = "SwiftLintBinary.artifactbundle/swiftlint-0.50.3-macos",
     url = "https://github.com/realm/SwiftLint/releases/download/0.50.3/SwiftLintBinary-macos.artifactbundle.zip",
 )
-
-# rules_xcodeproj
-
-http_archive(
-    name = "rules_xcodeproj",
-    sha256 = "3ec2a81def51aac59de49273cf6f8e3f151a95bc4f4b4891750afa750a55973b",
-    url = "https://github.com/MobileNativeFoundation/rules_xcodeproj/releases/download/1.3.2/release.tar.gz",
-)
-
-load(
-    "@rules_xcodeproj//xcodeproj:repositories.bzl",
-    "xcodeproj_rules_dependencies",
-)
-
-xcodeproj_rules_dependencies()

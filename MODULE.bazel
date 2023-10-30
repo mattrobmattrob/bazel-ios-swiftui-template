@@ -1,0 +1,13 @@
+bazel_dep(name = "rules_xcodeproj", version = "1.12.1")
+
+bazel_dep(
+    name = "buildifier_prebuilt",
+    version = "6.3.3",
+    dev_dependency = True,
+)
+
+bazel_dep(
+    name = "swiftlint",
+    version = "0.53.0",
+    repo_name = "SwiftLint"
+)

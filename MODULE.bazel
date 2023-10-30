@@ -9,5 +9,5 @@ bazel_dep(
 bazel_dep(
     name = "swiftlint",
     version = "0.53.0",
-    repo_name = "SwiftLint"
+    repo_name = "SwiftLint",
 )

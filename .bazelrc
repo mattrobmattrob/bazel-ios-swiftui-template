@@ -9,6 +9,9 @@ build:macos --host_crosstool_top=@local_config_apple_cc//:toolchain
 
 ## BUILD
 
+build --macos_minimum_os=13
+build --host_macos_minimum_os=13
+
 # https://bazel.build/reference/command-line-reference#flag--incompatible_strict_action_env
 build --incompatible_strict_action_env
 

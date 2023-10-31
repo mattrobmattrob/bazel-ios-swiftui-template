@@ -1,9 +1,9 @@
+bazel_dep(name = "bazel_skylib", version = "1.4.2")
 bazel_dep(name = "rules_xcodeproj", version = "1.12.1")
-
 bazel_dep(
-  name = "apple_support",
-  version = "1.10.1",
-  repo_name = "build_bazel_apple_support"
+    name = "apple_support",
+    version = "1.11.1",
+    repo_name = "build_bazel_apple_support",
 )
 bazel_dep(
     name = "rules_swift",
@@ -25,8 +25,11 @@ bazel_dep(
     dev_dependency = True,
 )
 
-bazel_dep(
-    name = "swiftlint",
-    version = "0.52.4",
-    repo_name = "SwiftLint",
-)
+non_module_dependencies = use_extension("//tools:extensions.bzl", "non_module_dependencies")
+use_repo(non_module_dependencies, "SwiftLint")
+
+# bazel_dep(
+#     name = "swiftlint",
+#     version = "0.52.4",
+#     repo_name = "SwiftLint",
+# )

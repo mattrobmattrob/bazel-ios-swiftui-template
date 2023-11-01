@@ -11,3 +11,4 @@ echo "Generating bazelrc"
 
 # Enable remote cache for all Github Action builds
 echo "build --config=remote_cache" > user.bazelrc
+echo "build --config=ci" >> user.bazelrc

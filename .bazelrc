@@ -60,6 +60,10 @@ build:remote_cache --remote_timeout=3600
 # https://bazel.build/reference/command-line-reference#flag--experimental_remote_cache_compression
 build:remote_cache --experimental_remote_cache_compression
 
+# By default don't upload local results to remote cache, only CI does this.
+build --noremote_upload_local_results
+build:ci --remote_upload_local_results
+
 ## LOCAL CONFIG
 
 # Load a user.bazelrc

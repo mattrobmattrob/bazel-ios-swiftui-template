@@ -16,9 +16,6 @@ bazel_dep(
     repo_name = "build_bazel_rules_apple",
 )
 
-apple_cc_configure = use_extension("@build_bazel_apple_support//crosstool:setup.bzl", "apple_cc_configure_extension")
-use_repo(apple_cc_configure, "local_config_apple_cc")
-
 bazel_dep(
     name = "buildifier_prebuilt",
     version = "6.3.3",

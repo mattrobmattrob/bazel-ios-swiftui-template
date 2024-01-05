@@ -54,6 +54,12 @@ build:remote_cache --remote_timeout=3600
 # https://bazel.build/reference/command-line-reference#flag--experimental_remote_cache_compression
 build:remote_cache --experimental_remote_cache_compression
 
+# Only wait for BES upload in CI builds but not dev builds.
+#
+# https://bazel.build/reference/command-line-reference#flag--bes_upload_mode
+build:remote_cache --bes_upload_mode=nowait_for_upload_complete
+build:ci --bes_upload_mode=wait_for_upload_complete
+
 # By default don't upload local results to remote cache, only CI does this.
 build --noremote_upload_local_results
 build:ci --remote_upload_local_results

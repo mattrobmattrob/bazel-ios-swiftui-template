@@ -2,7 +2,7 @@ bazel_dep(name = "bazel_skylib", version = "1.4.2")
 bazel_dep(name = "rules_xcodeproj", version = "1.16.0")
 bazel_dep(
     name = "apple_support",
-    version = "1.11.1",
+    version = "1.13.0",
     repo_name = "build_bazel_apple_support",
 )
 bazel_dep(
@@ -12,7 +12,7 @@ bazel_dep(
 )
 bazel_dep(
     name = "rules_apple",
-    version = "3.2.1",
+    version = "3.3.0",
     repo_name = "build_bazel_rules_apple",
 )
 

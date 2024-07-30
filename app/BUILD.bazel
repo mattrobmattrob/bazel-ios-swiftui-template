@@ -30,9 +30,27 @@ filegroup(
     srcs = glob(["PreviewContent/**"]),
 )
 
+filegroup(
+    name = "assets",
+    srcs = glob(
+        [
+            "Assets.xcassets/**",
+        ],
+        exclude = ["Assets.xcassets/AppIcon.appiconset/**"],
+    ),
+)
+
+filegroup(
+    name = "launch_images_ios",
+    srcs = glob(
+        ["launch_images_ios.xcassets/**"],
+        exclude = ["launch_images_ios.xcassets/.DS_Store"],
+    ),
+)
+
 ios_application(
     name = "app",
-    app_icons = glob(["Assets/Assets.xcassets/AppIcon.appiconset/**"]),
+    app_icons = glob(["Assets.xcassets/AppIcon.appiconset/**"]),
     bundle_id = app_info.bundle_id,
     bundle_name = app_info.bundle_name,
     entitlements = "ios app.entitlements",
@@ -43,12 +61,8 @@ ios_application(
     ],
     infoplists = [":Info.plist"],
     minimum_os_version = versions.minimum_ios_version,
-    resources = glob(
-        [
-            "Assets/Assets.xcassets/**",
-        ],
-        exclude = ["Assets/Assets.xcassets/AppIcon.appiconset/**"],
-    ),
+    launch_images = [":launch_images_ios"],
+    resources = [":assets"],
     # Add localizable assets here.
     # strings = glob(["*.lproj/Localizable.strings"]),
     version = ":Version",

@@ -32,7 +32,7 @@ jobs:
         run: |
           # Generate Xcode project
           bazelisk run -- //:xcodeproj
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: bazel-testlogs

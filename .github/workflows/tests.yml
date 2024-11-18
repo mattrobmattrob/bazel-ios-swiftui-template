@@ -15,10 +15,13 @@ jobs:
   tests:
     name: Build and Test
     runs-on: macos-14
+    environment: CI
     steps:
       - uses: actions/checkout@v3
-      - name: Select Xcode
+      - name: Set Up CI
         run: .github/workflows/xcode_select.sh
+        env:
+          BUILDBUDDY_API_KEY: ${{ secrets.BUILDBUDDY_API_KEY }}
       - name: Lint
         run: bazelisk run :lint && git diff --exit-code
       - name: Build and Test

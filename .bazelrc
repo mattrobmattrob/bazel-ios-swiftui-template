@@ -53,6 +53,10 @@ build:remote_cache --remote_download_toplevel
 build:remote_cache --remote_timeout=3600
 # https://bazel.build/reference/command-line-reference#flag--experimental_remote_cache_compression
 build:remote_cache --experimental_remote_cache_compression
+# https://bazel.build/reference/command-line-reference#flag--experimental_remote_cache_compression_threshold
+build:remote_cache --experimental_remote_cache_compression_threshold=100
+# https://bazel.build/reference/command-line-reference#flag--legacy_important_outputs
+build:remote_cache --nolegacy_important_outputs
 
 # Only wait for BES upload in CI builds but not dev builds.
 #

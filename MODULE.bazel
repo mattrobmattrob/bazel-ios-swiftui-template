@@ -1,4 +1,4 @@
-bazel_dep(name = "bazel_skylib", version = "1.4.2")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
 bazel_dep(name = "rules_xcodeproj", version = "2.10.0")
 bazel_dep(
     name = "apple_support",

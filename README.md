@@ -25,6 +25,8 @@ $ bazel build //app
 $ bazel test $(bazel query 'kind(ios_unit_test,//...)')
 ```
 
+If the tests fail, run ` xcrun simctl list devices` to check what devices and OS versions are locally available. iOS version is set in [`shared.bzl`](/tools/shared.bzl) and device type and version is set in each test's [`BUILD.bazel`](/modules/API/API/API.swift) file.
+
 ## Underlying Tools
 
 - [`rules_apple`](https://github.com/bazelbuild/rules_apple)

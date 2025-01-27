@@ -5,5 +5,5 @@ app_info = struct(
 )
 
 versions = struct(
-    minimum_ios_version = "16.0",
+    minimum_ios_version = "18.0",
 )

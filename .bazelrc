@@ -62,7 +62,6 @@ build:remote_cache --nolegacy_important_outputs
 #
 # https://bazel.build/reference/command-line-reference#flag--bes_upload_mode
 build:remote_cache --bes_upload_mode=nowait_for_upload_complete
-build:ci --bes_upload_mode=wait_for_upload_complete
 
 # By default don't upload local results to remote cache, only CI does this.
 build --noremote_upload_local_results

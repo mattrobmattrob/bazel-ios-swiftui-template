@@ -14,8 +14,7 @@ concurrency:
 jobs:
   tests:
     name: Build and Test
-    runs-on: macos-14
-    environment: CI
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v3
       - name: Set Up CI

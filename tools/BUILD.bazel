@@ -5,7 +5,7 @@ load(
 
 ios_xctestrun_runner(
     name = "default_test_runner",
-    device_type = "iPhone 14",
+    device_type = "iPhone 16",
     random = True,
     visibility = ["//visibility:public"],
 )

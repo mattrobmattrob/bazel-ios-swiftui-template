@@ -11,6 +11,10 @@ echo "Printing available simulators"
 
 xcrun simctl list devices
 
+echo "[TEMP] CREATE SIMS"
+
+xcrun simctl create 'MR_TEST_iPhone 16_18.2' 'iPhone 16' 'com.apple.CoreSimulator.SimRuntime.iOS-18-2'
+
 echo "Generating bazelrc"
 
 # Enable remote cache for all Github Action builds

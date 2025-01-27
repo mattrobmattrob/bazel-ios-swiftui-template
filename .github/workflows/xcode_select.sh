@@ -7,6 +7,10 @@ printenv
 sudo xcode-select -p
 sudo xcode-select -s /Applications/Xcode_16.2.app
 
+echo "Printing available simulators"
+
+xcrun simctl list devices
+
 echo "Generating bazelrc"
 
 # Enable remote cache for all Github Action builds

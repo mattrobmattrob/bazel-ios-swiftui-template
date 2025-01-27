@@ -5,7 +5,7 @@ echo "Selecting Xcode for environment"
 printenv
 
 sudo xcode-select -p
-sudo xcode-select -s /Applications/Xcode_15.4.app
+sudo xcode-select -s /Applications/Xcode_16.2.app
 
 echo "Generating bazelrc"
 

@@ -30,7 +30,7 @@ swift_library(
 ios_unit_test(
     name = "ModelsTests",
     minimum_os_version = versions.minimum_ios_version,
+    runner = default_test_runner,
     visibility = ["//modules:default_test_visibility"],
     deps = [":ModelsTestsLib"],
-    runner = default_test_runner,
 )

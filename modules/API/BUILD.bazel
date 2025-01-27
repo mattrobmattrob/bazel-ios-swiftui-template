@@ -33,7 +33,7 @@ swift_library(
 ios_unit_test(
     name = "APITests",
     minimum_os_version = versions.minimum_ios_version,
+    runner = default_test_runner,
     visibility = ["//modules:default_test_visibility"],
     deps = [":APITestsLib"],
-    runner = default_test_runner,
 )

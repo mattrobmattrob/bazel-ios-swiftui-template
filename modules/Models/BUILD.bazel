@@ -1,7 +1,6 @@
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
-load("@build_bazel_rules_apple//apple/testing/default_runner:ios_test_runner.bzl", "ios_test_runner")
-load("//tools:shared.bzl", "versions")
+load("//tools:shared.bzl", "default_test_runner", "versions")
 
 # Code
 
@@ -28,16 +27,10 @@ swift_library(
     ],
 )
 
-ios_test_runner(
-    name = "IPHONE_16",
-    device_type = "iPhone 16",
-    os_version = versions.minimum_ios_version,
-)
-
 ios_unit_test(
     name = "ModelsTests",
     minimum_os_version = versions.minimum_ios_version,
     visibility = ["//modules:default_test_visibility"],
     deps = [":ModelsTestsLib"],
-    runner = "IPHONE_16",
+    runner = default_test_runner,
 )

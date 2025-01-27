@@ -5,5 +5,7 @@ app_info = struct(
 )
 
 versions = struct(
-    minimum_ios_version = "16.0",
+    minimum_ios_version = "18.0",
 )
+
+default_test_runner = Label("@build_bazel_rules_apple//apple/testing/default_runner:ios_xctestrun_random_runner")

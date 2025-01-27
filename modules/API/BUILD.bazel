@@ -1,6 +1,6 @@
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
-load("//tools:shared.bzl", "versions")
+load("//tools:shared.bzl", "default_test_runner", "versions")
 
 # Code
 
@@ -35,4 +35,5 @@ ios_unit_test(
     minimum_os_version = versions.minimum_ios_version,
     visibility = ["//modules:default_test_visibility"],
     deps = [":APITestsLib"],
+    runner = default_test_runner,
 )

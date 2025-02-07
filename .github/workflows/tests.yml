@@ -34,7 +34,7 @@ jobs:
         run: |
           # Generate Xcode project
           bazelisk run -- //:xcodeproj
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: bazel-testlogs

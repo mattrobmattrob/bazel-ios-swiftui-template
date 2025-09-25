@@ -28,6 +28,11 @@ build --macos_minimum_os=12.6
 
 ## TEST
 
+# Explicit to use iPhone 16 (iOS 18.5) on Xcode 16.4 on the Github Actions runner.
+#
+# Docs: https://github.com/actions/runner-images/blob/main/images/macos/macos-15-Readme.md#installed-sdks
+build --ios_simulator_version=18.5
+
 # `bazel test` tries to build everything also by default, so skip that so the
 # *_library targets in examples/... aren't built (and fail since they are
 # platform specific).
